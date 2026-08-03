@@ -298,7 +298,7 @@ LiDAR_metrics<-function(las,
         rough_exp<-substitute(~roughness_metrics_f(Z,shannon_cut),list(shannon_cut = shannon_cut))
 
         rough<-lidR::pixel_metrics(
-          las,
+          las_filtered,
           func = eval(rough_exp),
           res = res)
 
